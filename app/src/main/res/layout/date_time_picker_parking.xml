@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_close_bg_gray"
+            android:visibility="visible"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/axiforma_semibold"
+            android:gravity="center"
+            android:text="@string/select_dateandtime"
+            android:textColor="@color/cal_grey_txt_title"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txt_selecteddate_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/axiforma_semibold"
+            android:gravity="center"
+            android:text="@string/select_dateandtime"
+            android:textColor="@color/dark_gray"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/txt_book_by"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/axiforma_semibold"
+            android:gravity="center"
+            android:text="@string/book_by"
+            android:textColor="#606060"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_booking_type"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/btn_bgnd_rc"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_hrs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selected_btn_bgnd_color"
+                android:text="@string/hours"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/default_btn_bgnd_trans"
+                android:text="@string/days"
+                android:textAllCaps="false"
+                android:textColor="@color/warmGreyFour" />
+
+            <Button
+                android:id="@+id/btn_months"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_selector_parking"
+                android:text="@string/months"
+                android:textAllCaps="false"
+                android:textColor="@color/warmGreyFour" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <!--        <LinearLayout-->
+            <!--            android:layout_weight="1"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:layout_width="0dp"-->
+            <!--            android:orientation="vertical"-->
+            <!--            android:layout_gravity="center"-->
+            <!--            android:gravity="center">-->
+
+            <LinearLayout
+                android:id="@+id/ll_checkindate"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_weight="0.50"
+                android:background="@drawable/rectangle_corner_bg_gray"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/txt_lbl_checkindate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="Date"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_checkin_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/_30_jul"
+                    android:textColor="@color/cal_grey"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_checkoutdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rectangle_corner_bg_gray"
+                android:gravity="center"
+                android:minHeight="100dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txt_lbl_checkoutdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/checkout_date"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_checkout_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/checkout_date"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+            <!--        </LinearLayout>-->
+
+            <!--        <LinearLayout-->
+            <!--            android:layout_weight="1"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:layout_width="0dp"-->
+            <!--            android:orientation="vertical"-->
+            <!--            android:layout_marginStart="20dp">-->
+
+            <LinearLayout
+                android:id="@+id/ll_checkintime"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="0.50"
+                android:background="@drawable/rectangle_corner_bg_gray"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/txt_lbl_checkintime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="Time"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_checkin_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/_12_30_pm"
+                    android:textColor="@color/cal_grey"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_checkoutime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rectangle_corner_bg_gray"
+                android:gravity="center"
+                android:minHeight="100dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txt_lbl_checkouttime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/checkout_time"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_checkout_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/checkout_time"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_corner_bg_gray"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/txt_hourss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/no_of_hours_new"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="12sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_multipleadd_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/txt_decrease_hours"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_baseline_indeterminate_check_box_grey_24">
+
+                    </TextView>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_hours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/myvacalared"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/txt_increase_hours"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_baseline_add_box_gray_24" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_days"
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_corner_bg_gray"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txt_dayss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/no_of_days_new"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="12sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_multipleadd_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="3dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/txt_decrease_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/ic_baseline_indeterminate_check_box_grey_24" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_days"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/myvacalared"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/txt_increase_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/ic_baseline_add_box_gray_24" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_months"
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectangle_corner_bg_gray"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txt_monthss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/no_of_months_new"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_multipleadd_months"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="3dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/txt_decrease_months"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/ic_baseline_indeterminate_check_box_grey_24" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_months"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/myvacalared"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/txt_increase_months"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/ic_baseline_add_box_gray_24" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!--        </LinearLayout>-->
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_datepicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                tools:ignore="UnusedAttribute" />
+
+            <DatePicker
+                android:id="@+id/datePicker_checkout"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/datePicker"
+                android:layout_centerHorizontal="true"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:visibility="gone"
+                tools:ignore="UnusedAttribute" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_timepicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <TimePicker
+                android:id="@+id/timePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:timePickerMode="spinner"
+                android:visibility="invisible"
+                tools:ignore="UnusedAttribute" />
+
+            <TimePicker
+                android:id="@+id/timePicker_checkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timePicker"
+                android:layout_centerHorizontal="true"
+                android:timePickerMode="spinner"
+                android:visibility="invisible"
+                tools:ignore="UnusedAttribute" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_rectangle_corner_gray"
+            android:fontFamily="@font/axiforma_semibold"
+            android:minHeight="30dp"
+            android:text="Done"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+
+            tools:ignore="SmallSp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_lbl_noofhours"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/no_hours"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_noofhours"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/axiforma_semibold"
+                    android:gravity="center"
+                    android:text="@string/no_hours"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_weight="1"
+                android:gravity="end|center">
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
